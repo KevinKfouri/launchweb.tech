@@ -1,0 +1,60 @@
+<div class="page-enter">
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label" appReveal>About</p>
+      <h1 appReveal>We are LaunchWeb</h1>
+      <p class="section-desc" appReveal>
+        A digital studio focused on helping businesses launch, grow, and dominate online.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about-grid">
+      <div class="about-text" appReveal>
+        <h2>Built for businesses that want more</h2>
+        <p>
+          LaunchWeb started with a simple idea — every business deserves a professional
+          online presence without the agency price tag or the months of waiting.
+        </p>
+        <p>
+          We combine modern web development, sharp design, and proven SEO strategies
+          to deliver products that look incredible and actually drive results.
+        </p>
+        <p>
+          Whether you need a full web app, a company website, or help getting found
+          on Google, we handle it end to end.
+        </p>
+      </div>
+      <div class="about-visual glass" appReveal>
+        <div class="about-stat"><strong>5+</strong><span>Years experience</span></div>
+        <div class="about-stat"><strong>120+</strong><span>Projects delivered</span></div>
+        <div class="about-stat"><strong>15</strong><span>Team members</span></div>
+        <div class="about-stat"><strong>12</strong><span>Countries served</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section values-section">
+    <div class="container">
+      <p class="section-label" appReveal>Our values</p>
+      <h2 class="section-title" appReveal>What we stand for</h2>
+      <div class="values">
+        @for (v of values; track v.title) {
+          <div class="value glass" appReveal>
+            <h3>{{ v.title }}</h3>
+            <p>{{ v.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section">
+    <div class="container cta-box glass" appReveal>
+      <h2>Want to work with us?</h2>
+      <p>We are always looking for ambitious clients with big ideas.</p>
+      <a routerLink="/contact" class="btn btn-primary">Let's Talk</a>
+    </div>
+  </section>
+</div>

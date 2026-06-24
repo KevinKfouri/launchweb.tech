@@ -1,0 +1,20 @@
+<header class="header" [class.header--scrolled]="scrolled()">
+  <div class="container header__inner">
+    <a routerLink="/" class="logo" (click)="closeMenu()">
+      <span class="logo__mark">LW</span>
+      <span class="logo__text">LaunchWeb</span>
+    </a>
+
+    <button class="burger" (click)="toggleMenu()" [class.burger--open]="menuOpen()" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+
+    <nav class="nav" [class.nav--open]="menuOpen()">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Home</a>
+      <a routerLink="/services" routerLinkActive="active" (click)="closeMenu()">Services</a>
+      <a routerLink="/work" routerLinkActive="active" (click)="closeMenu()">Work</a>
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a>
+      <a routerLink="/contact" routerLinkActive="active" class="nav__cta" (click)="closeMenu()">Get Started</a>
+    </nav>
+  </div>
+</header>

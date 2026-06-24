@@ -1,0 +1,6 @@
+@use '../styles/variables' as *;
+
+.main {
+  padding-top: $header-h;
+  min-height: calc(100vh - #{$header-h});
+}

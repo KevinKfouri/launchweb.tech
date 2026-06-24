@@ -1,0 +1,13 @@
+<div class="loader" [class.loader--done]="progress >= 100">
+  <div class="loader__inner">
+    <div class="loader__logo">
+      <span class="loader__icon">LW</span>
+      <span class="loader__name">LaunchWeb</span>
+    </div>
+    <p class="loader__tag">Launching your next big thing</p>
+    <div class="loader__bar">
+      <div class="loader__fill" [style.width.%]="progress"></div>
+    </div>
+    <span class="loader__pct">{{ progress | number: '1.0-0' }}%</span>
+  </div>
+</div>

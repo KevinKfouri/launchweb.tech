@@ -1,0 +1,90 @@
+<div class="page-enter">
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <p class="hero__label" appReveal>Digital agency for ambitious brands</p>
+        <h1 appReveal>
+          We <span class="grad">launch</span> businesses into the future
+        </h1>
+        <p class="hero__desc" appReveal>
+          LaunchWeb builds professional web apps, websites, and SEO strategies
+          that help your business stand out and scale online.
+        </p>
+        <div class="hero__btns" appReveal>
+          <a routerLink="/contact" class="btn btn-primary">Start a Project</a>
+          <a routerLink="/work" class="btn btn-outline">View Our Work</a>
+        </div>
+      </div>
+      <div class="hero__visual" appReveal>
+        <div class="hero__card glass">
+          <div class="hero__card-top">
+            <span class="dot"></span>
+            <span>launchweb.app</span>
+          </div>
+          <div class="hero__metrics">
+            <div><strong>+247%</strong><span>Traffic</span></div>
+            <div><strong>1.2s</strong><span>Load time</span></div>
+            <div><strong>#1</strong><span>Google rank</span></div>
+          </div>
+          <div class="hero__bars">
+            <div style="width: 85%"></div>
+            <div style="width: 65%"></div>
+            <div style="width: 92%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section stats">
+    <div class="container stats__grid">
+      @for (s of stats; track s.label) {
+        <div class="stat glass" appReveal>
+          <span class="stat__num">{{ s.num }}</span>
+          <span class="stat__label">{{ s.label }}</span>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="section services-preview">
+    <div class="container">
+      <p class="section-label" appReveal>What we do</p>
+      <h2 class="section-title" appReveal>Everything you need to grow online</h2>
+      <div class="cards">
+        @for (s of services; track s.title) {
+          <a [routerLink]="s.link" class="card glass" appReveal>
+            <span class="card__icon">{{ s.icon }}</span>
+            <h3>{{ s.title }}</h3>
+            <p>{{ s.desc }}</p>
+            <span class="card__link">Learn more →</span>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section process">
+    <div class="container">
+      <p class="section-label" appReveal>How it works</p>
+      <h2 class="section-title" appReveal>From idea to launch in 4 steps</h2>
+      <div class="steps">
+        @for (step of steps; track step.n) {
+          <div class="step glass" appReveal>
+            <span class="step__n">{{ step.n }}</span>
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container cta__box glass" appReveal>
+      <h2>Ready to launch?</h2>
+      <p>Tell us about your project and we'll get back within 24 hours.</p>
+      <a routerLink="/contact" class="btn btn-primary">Get in Touch</a>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,85 @@
+@use '../../../styles/variables' as *;
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: $bg;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+
+  &--done {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.loader__inner {
+  text-align: center;
+  width: min(320px, 90vw);
+}
+
+.loader__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 12px;
+  animation: logoPulse 2s ease-in-out infinite;
+}
+
+.loader__icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, $accent, $accent-2);
+  font-family: $font-display;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #fff;
+  box-shadow: 0 0 40px rgba(91, 140, 255, 0.4);
+}
+
+.loader__name {
+  font-family: $font-display;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.loader__tag {
+  color: $muted;
+  font-size: 0.9rem;
+  margin-bottom: 28px;
+}
+
+.loader__bar {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.loader__fill {
+  height: 100%;
+  background: linear-gradient(90deg, $accent, $accent-2);
+  border-radius: 99px;
+  transition: width 0.15s ease;
+}
+
+.loader__pct {
+  font-family: $font-display;
+  font-size: 0.75rem;
+  color: $muted;
+  letter-spacing: 2px;
+}
+
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}

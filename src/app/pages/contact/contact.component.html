@@ -1,0 +1,72 @@
+<div class="page-enter">
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label" appReveal>Contact</p>
+      <h1 appReveal>Let's build something great</h1>
+      <p class="section-desc" appReveal>
+        Tell us about your project. We reply within 24 hours.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-grid">
+      <div class="contact-info" appReveal>
+        <div class="info-card glass">
+          <h3>Email</h3>
+          <a href="mailto:hello&#64;launchweb.com">hello&#64;launchweb.com</a>
+        </div>
+        <div class="info-card glass">
+          <h3>Phone</h3>
+          <a href="tel:+15551234567">(555) 123-4567</a>
+        </div>
+        <div class="info-card glass">
+          <h3>Hours</h3>
+          <p>Mon – Fri, 9am – 6pm EST</p>
+        </div>
+      </div>
+
+      <form class="form glass" [formGroup]="form" (ngSubmit)="onSubmit()" appReveal>
+        @if (submitted()) {
+          <div class="success">Message sent! We'll be in touch soon.</div>
+        }
+
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" type="text" formControlName="name" placeholder="Your name" />
+          @if (form.get('name')?.touched && form.get('name')?.invalid) {
+            <span class="error">Name is required</span>
+          }
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" formControlName="email" placeholder="you@company.com" />
+          @if (form.get('email')?.touched && form.get('email')?.invalid) {
+            <span class="error">Valid email required</span>
+          }
+        </div>
+
+        <div class="field">
+          <label for="service">Service</label>
+          <select id="service" formControlName="service">
+            <option value="website">Website</option>
+            <option value="webapp">Web Application</option>
+            <option value="seo">SEO</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" formControlName="message" rows="5" placeholder="Tell us about your project..."></textarea>
+          @if (form.get('message')?.touched && form.get('message')?.invalid) {
+            <span class="error">Message must be at least 10 characters</span>
+          }
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+</div>

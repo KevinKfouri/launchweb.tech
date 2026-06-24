@@ -1,0 +1,45 @@
+<div class="page-enter">
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label" appReveal>Services</p>
+      <h1 appReveal>What we build for you</h1>
+      <p class="section-desc" appReveal>
+        Three core services. One goal — help your business win online.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container service-list">
+      @for (s of services; track s.id; let i = $index) {
+        <article class="service glass" [class.service--reverse]="i % 2 === 1" appReveal>
+          <div class="service__info">
+            <span class="service__price">{{ s.price }}</span>
+            <h2>{{ s.title }}</h2>
+            <p class="service__tag">{{ s.tagline }}</p>
+            <p class="service__desc">{{ s.desc }}</p>
+            <ul>
+              @for (f of s.features; track f) {
+                <li>{{ f }}</li>
+              }
+            </ul>
+            <a routerLink="/contact" class="btn btn-primary">Get a Quote</a>
+          </div>
+          <div class="service__visual">
+            <div class="service__mock glass">
+              <div class="mock-bar"><span></span><span></span><span></span></div>
+              <div class="mock-body">
+                <div class="mock-line long"></div>
+                <div class="mock-line"></div>
+                <div class="mock-line short"></div>
+                <div class="mock-blocks">
+                  <div></div><div></div><div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+</div>

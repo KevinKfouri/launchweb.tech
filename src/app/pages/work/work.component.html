@@ -1,0 +1,41 @@
+<div class="page-enter">
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label" appReveal>Portfolio</p>
+      <h1 appReveal>Work we're proud of</h1>
+      <p class="section-desc" appReveal>
+        A selection of web apps, websites, and SEO campaigns we've delivered for clients.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="filters" appReveal>
+        @for (f of filters; track f.id) {
+          <button class="filter-btn" [class.active]="filter() === f.id" (click)="setFilter(f.id)">
+            {{ f.label }}
+          </button>
+        }
+      </div>
+
+      <div class="grid">
+        @for (p of visible(); track p.id) {
+          <article class="project glass" appReveal [style.--accent]="p.color">
+            <div class="project__thumb"></div>
+            <div class="project__body">
+              <span class="project__type">{{ p.type }}</span>
+              <h3>{{ p.title }}</h3>
+              <p>{{ p.result }}</p>
+            </div>
+          </article>
+        }
+      </div>
+
+      <div class="work-cta" appReveal>
+        <p>Want results like these?</p>
+        <a routerLink="/contact" class="btn btn-primary">Start Your Project</a>
+      </div>
+    </div>
+  </section>
+</div>
